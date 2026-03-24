@@ -210,3 +210,28 @@ int main(){
     int n =21;
     printf("%d",prime(n));
 }
+
+
+
+////2) find out the largest string from the array. 
+#include <stdio.h>
+#include <string.h>
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    char arr[n] [20];
+    printf("Enter the elements: ");
+    for(int i = 0;i < n;i++){
+        scanf("%s",&arr[i]);
+    }
+    int idx = 0;
+    int max = 0;
+    for(int i = 0;i < n;i++){
+        if(strlen(arr[i])>max){
+            max = strlen(arr[i]);
+            idx = i;
+        }
+    }
+    printf("%s",arr[idx]);
+}
