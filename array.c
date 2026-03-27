@@ -295,4 +295,25 @@ int main(){
     sum(arr,n);
 }
 
+////PRINT OUT ONLY THE EVEN DIGITS OF AN ARRAY
+#include <stdio.h>
+void even(char arr[][20], int n){
+    for(int i = 0;i < n;i++){
+        for(int j = 0;j < n-1;j++){
+            char f = arr[i][j];
+            int digit = (int)f - 48;
+            if(digit%2 == 0){
+                printf("%d"" ",digit);
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+int main(){
+    char arr[][20] = {"6789","1234","2468","1357","5678"};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    even(arr , n);
+}
 
