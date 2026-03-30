@@ -317,3 +317,65 @@ int main(){
     even(arr , n);
 }
 
+//1) Replace the existing elements of array
+#include <stdio.h> 
+int main(){
+    int arr[] = {67,90,23,56,89,12,11};
+    printf("Enter the number of elements: ");
+    int n;
+    scanf("%d", &n);
+    int arr1[n];
+    printf("Enter the replacement elements: ");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr1[i]);
+    }
+
+    int arr2[n];
+    printf("Enter the elements to be replaced: ");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr2[i]);
+    }
+
+    int m = sizeof(arr)/sizeof(arr[0]);
+    for(int i = 0;i < n;i++){
+        for(int j = 0;j < m;j++){
+        if(arr2[i] == arr[j]){
+                arr[j] = arr1[i];
+            }
+        }
+    }
+    
+    printf("The output array is: ");
+    for(int i = 0;i < m;i++){
+        printf("%d\t",arr[i]);
+    }
+}
+
+////BINARY SEARCH ALGORITHM
+#include <stdio.h>
+int main(){
+    int arr[] = {10,20,30,40,50,60,70,80,90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int left = 0;
+    int right = n-1;
+    int temp = 0;
+    int idx = 0;
+    int target = 70;
+    while(left <= right){
+        int mid = (left + right)/2;
+        if(arr[mid] == target){
+            temp = 1;
+            idx = mid;
+            break;
+        }else if(target < arr[mid]){
+            right = mid - 1;
+        }else{
+            left = mid + 1;
+        }
+    }
+    if(temp == 0){
+        printf("%d", -1);
+    }else{
+        printf("%d", idx);
+    }
+}
