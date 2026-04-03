@@ -443,3 +443,37 @@ int main(){
 }
 
 
+//2) Find out the sum of array elements except the smallest and largest.
+#include <stdio.h>
+int main(){
+    int n;
+    printf("No. of elements:" );
+    scanf("%d",&n);
+    int arr[n];
+    int temp = 0;
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(int i = 0;i < n - 1;i++){
+        for(int j = i + 1;j < n;j++){
+            if(arr[i] > arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    int sum = 0;
+    for(int i = 0;i < n - 1;i++){
+        if(i == 0 || i == n-1){
+            continue;
+        }else{
+            sum += arr[i];
+        }
+    }
+    printf("%d",sum);
+}
+
+
+
+
