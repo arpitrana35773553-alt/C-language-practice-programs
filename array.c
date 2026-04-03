@@ -475,5 +475,45 @@ int main(){
 }
 
 
+//3) check the elements are arranged in ascending or descending order.
+#include <stdio.h>
+int main(){
+    int n;
+    printf("No. of elements:" );
+    scanf("%d",&n);
+    int arr[n];
+    int temp = 0;
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    if(arr[0]<arr[1]){
+    for(int i = 0;i<n-1;i++){
+        for(int j = i + 1;j < n-1;j++){
+            if(arr[i] < arr[j]){
+                temp = 1;
+                break;
+            }
+        }
+    }
+}else{
+    for(int i = 0;i<n-1;i++){
+        for(int j = i + 1;j < n-1;j++){
+            if(arr[i] > arr[j]){
+                temp = 2;
+                break;
+            }
+        }
+    }
+}
+    if(temp == 1){
+        printf("Array is ascending");
+    }else if(temp == 2){
+        printf("Array is descending");
+    }else{
+        printf("Array is UnSorted");
+    }
+}
+
+
 
 
