@@ -541,6 +541,45 @@ int main(){
     }
 }
 
+//////////05-04-2026/////////
+////Rearrange an array such that all negative elements come in start
+#include <stdio.h>
+void rearrange(int arr[], int n){
+    int temp[n];
+    int k = 0;
+    for(int i = 0;i < n;i++){
+        if(arr[i] < 0){
+        temp[k++] = arr[i];
+        }
+    }
+    for(int i = 0;i < n;i++){
+        if(arr[i] >= 0){
+            temp[k++] = arr[i];
+        }
+    }
+    for(int i = 0;i < n;i++){
+        arr[i] = temp[i];
+    }
 
+}
+void printArray(int arr[], int n){
+    printf("The output array is: ");
+    for(int i = 0;i < n;i++){
+        printf("%d ",arr[i]);
+    }
+}
+
+int main(){
+    int n;
+    printf("Type the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Insert the elements: ");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    rearrange(arr,n);
+    printArray(arr,n);
+}
 
 
