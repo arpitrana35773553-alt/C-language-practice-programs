@@ -603,3 +603,29 @@ int main(){
 }
 
 
+//////INSERT THE ELEMENTS AT GIVEN POSITION
+#include <stdio.h>
+int main(){
+    int arr[50] = {10,2,6,90,87,15,67};
+    int size = 7;
+    int element = 25;
+    int third = 300;
+    int last = 100;
+    int first = 200;
+    for(int i = size - 1;i >= 0;i--){
+        arr[i+1] = arr[i];
+    }
+    size++;
+    arr[0] = first;
+    for(int i = size - 1;i >= 3;i--){
+        arr[i+1] = arr[i];
+    }
+    size++;
+    arr[3] = third;
+    arr[size] = 100;
+    size++;
+    for(int i = 0;i < size;i++){
+        printf("%d ",arr[i]);
+    }
+}
+
