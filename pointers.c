@@ -61,4 +61,39 @@ int main(){
     printf("%d",sum);
 }
 
+//QUESTION 3
+//3) Find out the sum of digits of a number using pointer
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter the the number: ");
+    scanf("%d",&a);
+    int *p = &a;
+    int sum = 0;
+    while(*p > 0){
+        int digit = (*p) % 10;
+        sum += digit;
+        *p = *p / 10;
+    }
+    printf("%d",sum);
+}
+
+
+////QUESTION 4
+//4) print the list of even digits of a number using pointer 
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter the the number: ");
+    scanf("%d",&a);
+    int *p = &a;
+    while(*p > 0){
+        int digit = (*p) % 10;
+        if(digit % 2 == 0){
+            printf("%d  ",digit);
+        }
+        *p = *p / 10;
+    }
+}
+
 
