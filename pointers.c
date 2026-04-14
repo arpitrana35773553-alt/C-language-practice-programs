@@ -114,4 +114,33 @@ int main(){
     printf("a = %d & b = %d",a , b);
 }
 
-
+////1) Print the list of elements from array which is providing the sum of digits even.
+#include <stdio.h>
+int isEven(int m){
+    int sum = 0;
+    while(m > 0){
+       int digit = m % 10;
+       sum += digit;
+       m = m / 10; 
+    }
+    if(sum % 2 == 0){
+        return 1;
+    }else{
+        return 0;
+    }
+    } 
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int *p = arr;
+    for(int i = 0;i < n;i++){
+        if(isEven(*(p + i)) == 1){
+            printf("%d  ",*(p + i));
+        }
+    }
+}
