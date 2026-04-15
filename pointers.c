@@ -177,3 +177,54 @@ int main(){
     return 0;
 }
 
+////3) Print the list of elements from the array which is providing the sum of digits is prime.
+#include <stdio.h>
+int isPrime(int n){
+    int temp = 0;
+    for(int i = 2;i < n;i++){
+        if(n == 2){
+            return 1;
+        }
+        if(n % i == 0){
+            temp = 1;
+            break;
+        }
+    }
+    if(temp == 1){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+int primeSum(int m){
+    int sum = 0;
+    while(m > 0){
+       int digit = m % 10;
+       sum += digit;
+       m = m / 10; 
+    }
+    if(isPrime(sum) == 1){
+        return 1;
+    }else{
+        return 0;
+    }
+    } 
+    
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int *p = arr;
+    for(int i = 0;i < n;i++){
+        if(primeSum(*(p + i)) == 1){
+            printf("%d  has sum of digits as prime\n",*(p + i));
+        }
+    }
+    return 0;
+}
+
