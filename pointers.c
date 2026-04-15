@@ -144,3 +144,36 @@ int main(){
         }
     }
 }
+
+////2) Print the list of elements which is providing the product of digits more than 50.
+#include <stdio.h>
+int isGreater(int m){
+    int product = 1;
+    while(m > 0){
+       int digit = m % 10;
+       product *= digit;
+       m = m / 10; 
+    }
+    if(product > 50){
+        return 1;
+    }else{
+        return 0;
+    }
+    } 
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int *p = arr;
+    for(int i = 0;i < n;i++){
+        if(isGreater(*(p + i)) == 1){
+            printf("%d  has product of digits greater than 50\n",*(p + i));
+        }
+    }
+    return 0;
+}
+
