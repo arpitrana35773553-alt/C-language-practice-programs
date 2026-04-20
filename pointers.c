@@ -228,3 +228,79 @@ int main(){
     return 0;
 }
 
+
+
+///////////20-04-2026////////
+////1) FIND OUT THE TOTAL DIGIT OF MEMORY ADDRESS OF a 
+#include <stdio.h>
+#include <stdint.h>
+int main(){
+    int a;
+    printf("Enter the number: ");
+    scanf("%d",&a);
+    int *p = &a;
+    int digit = 0;
+    uintptr_t num = (uintptr_t)p;
+    printf("Memory Address is : %llu\n",(unsigned long long)p);
+    while(num > 0){
+        digit++;
+        num = num/10;
+    }
+    printf("%d",digit);
+}
+
+//2) FIND OUT THE MEMORY ADDRESS OF a IS POSITIVE OR NEGATIVE
+#include <stdio.h>
+int main(){
+    int a;
+    printf("Enter a number: ");
+    scanf("%d",&a);
+    int *p = &a;
+    printf("This is the memory address: %lld\n",(long long)p);
+    if(*p > 0){
+        printf("Memory address is positive.");
+    }else{
+        printf("It is negative.");
+    }
+}
+
+////3) FIND OUT THE TOTAL NUMBER OF PRIME ELEMENTS FROM ARRAY USING POINTERS
+#include <stdio.h>
+int isPrime(int n){
+    int temp = 0;
+     if(n == 1){
+            return 0;
+        }
+    for(int i = 2;i < n;i++){
+        if(n == 2){
+            return 1;
+        }
+        if(n % i == 0){
+            temp = 1;
+            break;
+        }
+    }
+    if(temp == 1){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+int main(){
+    int n;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int total = 0;
+    int *p = arr;
+    for(int i = 0;i < n;i++){
+        if(isPrime(*(p + i)) == 1){
+            total += 1;
+        }
+    }
+    printf("Total is: %d",total);
+}
