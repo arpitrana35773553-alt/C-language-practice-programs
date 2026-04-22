@@ -304,3 +304,75 @@ int main(){
     }
     printf("Total is: %d",total);
 }
+
+
+////4) REVERSE THE ARRAY USING POINTERS 
+#include <stdio.h>
+int main(){
+    int n;
+     int n;
+    printf("Enter number of elements: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements: ");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+}
+
+/////////////22-04-2026//////////
+////PRINT VALUE, ADDRESS AND VALUE USING POINTER
+#include <stdio.h>
+int main(){
+    int n;
+    printf("Enter the number: ");
+    scanf("%d",&n);
+    int *p = &n;
+    printf("Address of n = %d\n",p);
+    printf("Value Without using pointer is %d\n",n);
+    printf("Value using the pointer is %d",*p);
+}
+
+
+////////NULL POINTER ////////////
+////MEANS A POINTER THAT POINTS TO NOTHING 
+#include <stdio.h>
+int main(){
+    int *p = NULL;
+    printf("%d",*p);
+}
+
+
+//////VOID POINTER///////
+////PRINT ALL VALUES OF INT, CHAR, FLOAT USING ONE VOID 
+#include <stdio.h>
+int main(){
+    void *p;
+    char a = 'A';
+    int b = 7;
+    float c = 7.7;
+    p = &a;
+    printf("%c\n",*(char*)p);
+    p = &b;
+    printf("%d\n",*(int*)p);
+    p = &c;
+    printf("%.1f",*(float*)p);
+}
+
+/////////POINTER AIRTMETIC//////////
+////PRINT AN ARRAY USING POINTER ONLY
+#include <stdio.h>
+int main(){
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the elements in the array: \n");
+    for(int i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int *p = arr;
+    for(int i = 0;i < n;i++){
+        printf("%d ",*(p+i));
+    }
+}
