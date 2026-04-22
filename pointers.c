@@ -376,3 +376,14 @@ int main(){
         printf("%d ",*(p+i));
     }
 }
+
+////PRINT THE VALUES FROM 1 TO 10 USING POINTERS 
+#include <stdio.h>
+int main(){
+    int arr[] = {1,4,8,12,16};
+    int *p = arr;
+    int n = 10;
+    for(int i = 0;i < n;i++){
+        printf("%d ",*p + i);
+    }
+}
