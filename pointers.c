@@ -387,3 +387,18 @@ int main(){
         printf("%d ",*p + i);
     }
 }
+
+////FIND THE LARGEST ELEMENT USING POINTER IN AN ARRAY
+#include <stdio.h>
+int main(){
+    int arr[] = {1,3,7,5,9,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int *p = arr;
+    int largest = *p;
+    for(int i = 0;i < n;i++){
+        if(largest < *(p + i)){
+            largest = *(p + i);
+        }
+    }
+    printf("Largest Element is : %d",largest);
+}
