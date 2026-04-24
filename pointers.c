@@ -402,3 +402,34 @@ int main(){
     }
     printf("Largest Element is : %d",largest);
 }
+
+///////DYNAMIC MEMORY ALLOCATION////////
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p;
+    p = (int*)malloc(5*sizeof(int));
+    p = (int*)realloc(p,10*sizeof(int));
+    printf("Enter the elements: ");
+    for(int i = 0;i < 10;i++){
+        scanf("%d",&p[i]);
+    }
+    for(int i = 0;i < 10;i++){
+        printf("%d ",p[i]);
+    }
+}
+
+////////////CALLOC/////////
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int *p = (int*)calloc(5,sizeof(int));
+    p = (int*)realloc(p,10*sizeof(int));
+    printf("Enter the elements: ");
+    for(int i = 0;i < 10;i++){
+        scanf("%d",&p[i]);
+    }
+    for(int i = 0;i < 10;i++){
+        printf("%d ",p[i]);
+    }
+}
