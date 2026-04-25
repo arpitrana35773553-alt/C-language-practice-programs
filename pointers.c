@@ -433,3 +433,25 @@ int main(){
         printf("%d ",p[i]);
     }
 }
+
+////REVERSE THE ARRAY USING POINTERS
+#include <stdio.h>
+int main(){
+    int arr[] = {1,2,3,4,5,6,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int *p = arr;
+    int *q = arr + n - 1;
+    int temp = 0;
+    printf("%d",2[arr]);
+    while(*p < *q){
+        temp = *p;
+        *p = *q;
+        *q = temp;
+        *(p++);
+        *(q--);
+    }
+    for(int i = 0;i < n;i++){
+        printf("%d ",arr[i]);
+    }
+}
+

@@ -1,10 +1,11 @@
-////COUNT THE LENGTH OF STRING WITHOUT USING STRING FUNCTION
+/////////STRING'S BASICS////////
 #include <stdio.h>
 #include <string.h>
 int main(){
     char name[] = "Doraemon";//DECALARATION & INITIALISATION
     char name2[50];
-    scanf("%s",&name2);//gets(name)
+    scanf("%s\n",&name2);//gets(name)
+    printf("%s",name2);
     printf("%s\n",name);//puts(name)
     int n = strlen(name);
     for(int i = 0 ;i < n;i++){//processing of string
@@ -17,4 +18,13 @@ int main(){
             printf("%c",names[i]);
         }
     }
+}
+
+//////////fgets()///////////
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char str[50];
+    fgets(str,sizeof(str),stdin);
+    printf("%s",str);
 }
