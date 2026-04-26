@@ -28,3 +28,14 @@ int main(){
     fgets(str,sizeof(str),stdin);
     printf("%s",str);
 }
+
+/////////FIND THE STRING LENGTH WITHOUT strlen
+#include <stdio.h>
+int main(){
+    char str[50] = "Doraemon1023";
+    int count = 0;
+    for(int i = 0;str[i] != 0;i++){
+        count++;
+    }
+    printf("%d",count);
+}
