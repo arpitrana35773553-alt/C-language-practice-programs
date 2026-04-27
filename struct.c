@@ -51,3 +51,39 @@ int main(){
     }
 }
 
+//2) STORE THE LIST OF STUDENTS DETAILS FROM USER AND PRINT THE STUDENT NAME WHO HAVE FAILED THE EXAM
+#include <stdio.h>
+struct student{
+    char name[50];
+    char grade;
+};
+int main(){
+    struct student s[3];
+    for(int i = 0;i < 3;i++){
+        scanf("%s %c",&s[i].name, &s[i].grade);
+    }
+    for(int i = 0;i < 3;i++){
+        if(s[i].grade == 'F'){
+            printf("Student %s has Grade %c\n",s[i].name,s[i].grade);
+        }
+    }
+}
+
+
+////3) PRINT THE LIST OF STUDENT DETAILS WHO HAVE ABOVE CGPA OF 8.5
+#include <stdio.h>
+struct student{
+    char name[50];
+    float CGPA;
+};
+int main(){
+    struct student s[3];
+    for(int i = 0;i < 3;i++){
+        scanf("%s %f",&s[i].name, &s[i].CGPA);
+    }
+for(int i = 0;i < 3;i++){
+        if(s[i].CGPA >= 8.5){
+            printf("Student %s has CGPA %.2f\n",s[i].name,s[i].CGPA);
+        }
+    }
+}
