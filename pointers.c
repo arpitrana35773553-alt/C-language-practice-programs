@@ -485,3 +485,13 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+int main() {
+    int a, b;
+    int *p1 = &a;
+    int *p2 = &b;
+    scanf("%d %d", p1, p2);
+    int result = (*p1) % (*p2);
+    printf("%d %% %d = %d", *p1, *p2, result);
+    return 0;
+}
