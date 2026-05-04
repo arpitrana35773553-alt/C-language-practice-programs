@@ -51,3 +51,21 @@ int main(){
 }   
 
 
+//3) Print the list of student details whose name start and end with the vowels.
+#include <stdio.h>
+#include <string.h>
+struct Student{
+    char name[50];
+    int age;
+};
+int main(){
+    struct Student s[4];
+    for(int i = 0;i < 4;i++){
+        scanf("%s %d",&s[i].name, &s[i].age);
+    }
+    for(int i = 0;i < 4;i++){
+        if((s[i].name[0] && s[i].name[strlen(s[i].name) - 1]> 18)  == ('a' || 'e' || 'i' || 'o' || 'u')){
+            printf("%s %d\n",s[i].name,s[i].age);
+        }
+    }
+}   
