@@ -245,4 +245,46 @@ int main(){
   }
 }
 
- 
+#include <stdio.h>
+int main(){
+  int choice;
+  scanf("%d",&choice);
+  switch(choice){
+    case 1:
+    printf("Monday");
+    break;
+    case 2:
+    printf("Tuesday");
+    break;
+    default:
+    printf("No Day");
+  }
+}
+
+#include <stdio.h>
+int main(){
+  int i;
+  scanf("%d",&i);
+  goto skip;
+  i = i + 10;
+  skip:
+  printf("%d",i);
+}
+
+#include <stdio.h>
+int main(){
+  float i;
+  scanf("%f",&i);
+  int a = (int)i;
+  printf("%d",a);
+}
+
+#include <stdio.h>
+#include <string.h>
+int main(){
+  char name[100];
+  printf("Enter the name ");
+  fgets(name,100,stdin);
+  name[strcspn(name,"\n")] = '\0';
+  puts(name);
+}

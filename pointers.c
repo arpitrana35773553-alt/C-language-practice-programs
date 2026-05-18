@@ -496,4 +496,22 @@ int main() {
     return 0;
 }
 
+#include<stdio.h>
 
+int main()
+{
+    int arr[5];
+    int *p1 = &arr[0];
+    int *p2 = &arr[3];
+    printf("%d", p2-p1);
+    return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+    int *p;
+    *p = 10;
+    printf("%d",*p);
+    return 0;
+}
